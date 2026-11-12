@@ -1,0 +1,87 @@
+/* Flaith Nomore - style.css (dipakai semua halaman) */
+:root{--bg:#040919;--bg2:#070f26;--card:#0b1533;--line:rgba(212,175,122,.3);--gold:#d4af7a;--text:#eef1fb;--muted:#9fabcf;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-snap-type:y proximity}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;font-weight:300;line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;margin:0}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(4,9,25,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(4,9,25,.95);z-index:19}
+.logo{font-family:'Playfair Display',serif;font-size:1.15rem;letter-spacing:.08em;color:var(--gold);text-decoration:none}
+nav ul{display:flex;gap:clamp(12px,3vw,34px);list-style:none;margin:0;padding:0}
+nav a{color:var(--text);text-decoration:none;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;opacity:.8;transition:.3s}
+nav a:hover{color:var(--gold);opacity:1}
+section{min-height:100vh;padding:110px 6vw 70px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{color:var(--gold);letter-spacing:.35em;font-size:.7rem;text-transform:uppercase;margin-bottom:14px}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:18px}
+h2::after{content:"";display:block;width:64px;height:2px;margin-top:14px;background:linear-gradient(90deg,var(--gold),transparent)}
+.contact h2::after{margin-inline:auto}
+.wrap{max-width:1050px;margin:0 auto;width:100%}
+#home{align-items:center;text-align:center;background:radial-gradient(circle at 50% 22%,#112060 0%,transparent 55%),radial-gradient(circle at 90% 95%,rgba(212,175,122,.16),transparent 45%),var(--bg)}
+#home h1{font-size:clamp(2.8rem,9vw,6rem);line-height:1.05;margin:10px 0 20px}
+#home h1 em{color:var(--gold)}
+#home p{max-width:520px;color:var(--muted)}
+.btn{display:inline-block;margin-top:26px;padding:13px 34px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;letter-spacing:.2em;font-size:.75rem;text-transform:uppercase;border-radius:40px;transition:.3s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+.hero-plate{margin-top:34px;transform:rotate(-4deg);animation:float 5s ease-in-out infinite}
+.hero-plate .plate{font-size:1.6rem;padding:12px 30px;box-shadow:0 0 70px rgba(212,175,122,.4),0 22px 40px rgba(0,0,0,.65)}
+@keyframes float{50%{transform:rotate(-4deg) translateY(-12px)}}
+.scroll{margin-top:36px;color:var(--muted);font-size:.7rem;letter-spacing:.3em;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+#profil,#sumber{background:var(--bg2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.box{border:1px solid var(--line);border-radius:18px;padding:28px;background:rgba(255,255,255,.03)}
+.box h3{font-size:1.3rem;color:var(--gold);margin-bottom:8px}
+p{margin:0 0 14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:26px}
+.card{background:linear-gradient(160deg,#101d44,var(--card) 60%);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.35s}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s,transform .6s,border-color .3s,box-shadow .3s}
+.rv.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 26px rgba(212,175,122,.18)}
+.card h3{font-size:1.1rem;margin:16px 0 4px}
+.card span{font-size:.72rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}
+.stage{height:130px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,rgba(212,175,122,.18),rgba(0,0,0,.4));border-radius:12px;position:relative;overflow:hidden}
+.plate{background:#f4f1e8;color:#111;font-family:'Poppins',sans-serif;font-weight:500;letter-spacing:.12em;text-align:center;border:3px solid #111;border-radius:7px;font-size:1rem;padding:8px 16px;position:relative}
+.plate small{display:block;font-size:.45rem;letter-spacing:.2em;border-top:1px solid #111;margin-top:2px;padding-top:2px}
+.motor .plate{font-size:.85rem;padding:7px 12px}
+.acrylic .plate{box-shadow:0 0 0 5px rgba(255,255,255,.25),0 8px 20px rgba(0,0,0,.4)}
+.acrylic .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.7) 0,transparent 40%);border-radius:4px}
+.lampu .plate{box-shadow:0 0 28px 6px rgba(120,190,255,.7)}
+.slide .plate{transform:translateX(-14px);box-shadow:16px 0 0 -4px #cfd5e6,16px 0 0 -2px #111}
+.double{flex-direction:column;gap:6px}
+.double .plate{font-size:.75rem;padding:5px 12px}
+.ph{margin-top:20px;padding:22px;border:1px dashed var(--gold);border-radius:14px;color:var(--text);font-style:italic}
+.card .stage{height:190px}
+.card p{font-size:.88rem;margin:4px 0 16px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.price{font-weight:500}
+.mini{padding:8px 20px;border:1px solid var(--gold);border-radius:30px;color:var(--gold);text-decoration:none;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;transition:.3s}
+.mini:hover{background:var(--gold);color:var(--bg)}
+#pesan{background:radial-gradient(circle at 15% 10%,#0e1b4d 0,transparent 50%),var(--bg)}
+form{margin-top:26px;padding:34px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(160deg,#101d44,var(--card) 60%);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+label{display:block;margin:0 0 6px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+input,select,textarea{width:100%;margin-bottom:20px;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(4,9,25,.7);color:var(--text);font:inherit;font-size:.92rem;transition:.3s}
+option{background:#0b1533}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,122,.18)}
+textarea{min-height:110px;resize:vertical}
+form button{width:100%;padding:15px;border:0;border-radius:40px;background:linear-gradient(90deg,#b8935a,var(--gold));color:var(--bg);font:inherit;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.3s}
+form button:hover{filter:brightness(1.1);transform:translateY(-2px)}
+#msg{margin-top:16px;text-align:center;font-size:.85rem;color:var(--gold);min-height:1.2em}
+.contact{text-align:center;align-items:center}
+.links{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.links a{min-width:240px;padding:20px 26px;border:1px solid var(--line);border-radius:16px;color:var(--text);text-decoration:none;background:var(--card);transition:.3s}
+.links a:hover{border-color:var(--gold);transform:translateY(-4px)}
+.links b{display:block;color:var(--gold);font-weight:500;letter-spacing:.2em;font-size:.7rem;text-transform:uppercase}
+footer{text-align:center;padding:26px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--line)}
+@media(max-width:720px){.two{grid-template-columns:1fr}nav ul{gap:10px}nav a{font-size:.62rem;letter-spacing:.1em}.logo{display:none}nav{justify-content:center}}
+/* Foto produk */
+.card .stage{height:210px;padding:0}
+.stage::before{content:"Foto produk";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
+.stage img{position:relative;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card:hover .stage img{transform:scale(1.06)}/* Foto produk */
+.card .stage{height:210px;padding:0}
+.stage::before{content:"Foto produk";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
+.stage img{position:relative;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.card:hover .stage img{transform:scale(1.06)}
+.ph p {
+    color: var(--text);
+}

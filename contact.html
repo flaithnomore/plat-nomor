@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pemesanan &amp; Kontak | Flaith Nomore</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<a class="logo" href="index.html">FLAITH NOMORE</a>
+<ul><li><a href="index.html">Home</a></li><li><a href="profil.html">Profil</a></li><li><a href="product.html">Products</a></li><li><a href="contact.html" style="color:var(--gold);opacity:1">Contact</a></li><li><a href="sumber.html">Sumber</a></li></ul>
+</nav>
+
+<section id="pesan">
+<div class="wrap" style="max-width:640px">
+<div class="eyebrow">Order</div>
+<h2>Form Pemesanan</h2>
+<p>Isi data di bawah ini, nanti kami hubungi kamu secepatnya.</p>
+<form id="f">
+<label for="nama">Nama Pemesan</label><input id="nama" name="nama" required placeholder="Masukkan nama kamu">
+<label for="wa">Nomor WhatsApp</label><input id="wa" name="wa" type="tel" required placeholder="Contoh: 0812xxxxxxxx">
+<label for="plat">Nomor Plat yang Dipesan</label><input id="plat" name="plat" required placeholder="Contoh: B 1234 ABC (05.28)">
+<label for="tipe">Jenis Kendaraan / Tipe Plat</label>
+<select id="tipe" name="tipe" required><option value="">Pilih tipe plat</option><option>Plat Mobil Standar</option><option>Plat Mobil Cover Acrylic</option><option>Plat Mobil Slide</option><option>Plat Mobil Lampu</option><option>Plat Motor Standar</option><option>Plat Motor Double Plat</option><option>Plat Motor Cover Acrylic</option></select>
+<label for="catatan">Catatan Tambahan</label><textarea id="catatan" name="catatan" placeholder="Detail khusus, misalnya baut tanam, warna font, dll."></textarea>
+<button type="submit">Kirim Pesanan</button>
+<div id="msg" role="status"></div>
+</form>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="eyebrow">Hubungi Kami</div>
+<h2>Contact</h2>
+<p>Tertarik atau mau tanya-tanya dulu? Hubungi kami lewat:</p>
+<div class="links">
+<a href="https://instagram.com/" target="_blank" rel="noopener"><b>Instagram</b>@flaith_nomore</a>
+<a href="mailto:flaithnomore81@gmail.com"><b>Email</b>flaithnomore81@gmail.com</a>
+</div>
+</section>
+
+<footer>&copy; 2026 Flaith Nomore. All rights reserved.</footer>
+<script src="script.js"></script>
+<script>
+// Form pemesanan: membuka email berisi pesanan. Ganti dengan link Google Form jika mau tersimpan di Drive.
+(function(){
+var f=document.getElementById('f'),m=document.getElementById('msg');
+var t=new URLSearchParams(location.search).get('tipe');if(t){f.tipe.value=t}
+f.addEventListener('submit',function(e){e.preventDefault();
+var b='Nama: '+f.nama.value+'\nWhatsApp: '+f.wa.value+'\nNomor plat: '+f.plat.value+'\nTipe: '+f.tipe.value+'\nCatatan: '+f.catatan.value;
+m.textContent='Email akan terbuka, tinggal kamu kirim ya.';
+location.href='mailto:flaithnomore81@gmail.com?subject='+encodeURIComponent('Pesanan Plat: '+f.tipe.value)+'&body='+encodeURIComponent(b)});
+})();
+</script>
+</body>
+</html>
